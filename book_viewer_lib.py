@@ -35,14 +35,14 @@ def get_titles_and_embeddings(df: pd.DataFrame) -> Tuple:
 def get_closest_books(titles: List[str],
                       embeddings: List[str], book_index: int, num_closest_books: int) -> None:
     """Prints closest books to book at book index."""
-    distance = []
+    similarity = []
     closest_books = []
     for i, embedding in enumerate(embeddings):
-        distance.append((i, abs(float(np.dot(embedding,
+        similarity.append((i, abs(float(np.dot(embedding,
                                        embeddings[book_index].T)))))
-    sorted_distance = sorted(distance, key=lambda tup: tup[1], reverse=True)
-    for i, distance in sorted_distance[1:1+num_closest_books]:
-        closest_books.append((i, titles[i]))
+    sorted_similarity = sorted(similarity, key=lambda tup: tup[1], reverse=True)
+    for i, similarity in sorted_similarity[1:1+num_closest_books]:
+        closest_books.append((i, titles[i], similarity))
     return closest_books
 
 

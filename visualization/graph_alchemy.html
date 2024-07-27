@@ -1,0 +1,52 @@
+<!-- <html>
+<head>
+  <link rel="stylesheet" href="styles/alchemy.min.css"/>
+  <link rel="stylesheet" href="styles/vendor.css"/>
+</head>
+<body>
+  <div class="alchemy" id="alchemy"></div>
+  <script type="text/javascript" src="scripts/vendor.js"></script>
+  <script src="scripts/alchemy.min.js"></script>
+  <script type="text/javascript">
+   var conf = {
+      "dataSource": "data/graph.json",
+   };
+alchemy.begin(conf)
+    </script>
+  </body>
+</html> -->
+
+<html>
+<head>
+  <link rel="stylesheet" href="styles/alchemy.min.css"/>
+  <link rel="stylesheet" href="styles/vendor.css"/>
+</head>
+<body>
+  <div class="alchemy" id="alchemy"></div>
+  <script type="text/javascript" src="scripts/vendor.js"></script>
+  <script src="scripts/alchemy.min.js"></script>
+  <script type="text/javascript">
+      var config = {
+        dataSource: "data/graph.json", 
+        // cluster: true, 
+        // clusterColours: ["#DD79FF", "#00FF30", "#5168FF", "#f83f00", "#ff8d8f"],
+        forceLocked: false,
+        // nodeCaption: "title", 
+        edgeCaption: "similarity",
+        nodeCaptionsOnByDefault: true,
+        // nodeTypes: {"type":["philosopher"]},
+        directedEdges:true,
+        // nodeStyle: {
+        //     "philosopher": {
+        //         "radius": 18
+        //     }
+        // }, 
+        initialScale: 0.7, 
+        initialTranslate: [250,150],
+        
+      }
+
+        alchemy = new Alchemy(config)
+    </script>
+  </body>
+</html>

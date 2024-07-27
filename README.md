@@ -47,4 +47,4 @@ cd visualization/
 python -m http.server 8000
 ```
 
-![graph-data](visualization/graph-data-d3js.png)
+![graph-data](visualization/images/alchemy-graph.png)
