@@ -41,6 +41,10 @@ conda activate goodreads-py12
 pip install -r requirements.txt
 ```
 
+To generate graph data:
+1. Execute book_viewer.ipynb colab
+2. Execute visualization/visualization.ipynb colab
+
 To view graph data:
 ```
 cd visualization/
