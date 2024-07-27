@@ -33,17 +33,17 @@ def get_titles_and_embeddings(df: pd.DataFrame) -> Tuple:
     return titles, title_embeddings
 
 def get_closest_books(titles: List[str],
-                      embeddings: List[str], book_index: int) -> None:
+                      embeddings: List[str], book_index: int, num_closest_books: int) -> None:
     """Prints closest books to book at book index."""
     distance = []
+    closest_books = []
     for i, embedding in enumerate(embeddings):
         distance.append((i, abs(float(np.dot(embedding,
                                        embeddings[book_index].T)))))
     sorted_distance = sorted(distance, key=lambda tup: tup[1], reverse=True)
-    print('Original book:', titles[book_index])
-    print('=========')
-    for i, distance in sorted_distance[1:10]:
-        print(i, titles[i])
+    for i, distance in sorted_distance[1:1+num_closest_books]:
+        closest_books.append((i, titles[i]))
+    return closest_books
 
 
 def get_books_in_html_page(file_path: str) -> List:
